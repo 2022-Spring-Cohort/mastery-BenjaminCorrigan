@@ -30,7 +30,12 @@
                        class="posts__nav-link"></a>
                 </div>
             </nav>
+            <p class="add_post">   Add new post here:</p>
         </section>
+        <form th:action="'/topic/' + ${topic.id} + '/addNewPost'" method="post">
+            <input type="text" name="Post"/>
+            <input type="submit"/>
+        </form>
     </main>
 </div>
 </body>

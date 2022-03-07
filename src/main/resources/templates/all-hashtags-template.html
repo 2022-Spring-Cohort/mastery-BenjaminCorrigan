@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>survivingCodingBootCamp.com</title>
+    <link rel="icon" href="/assets/icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+<main>
+    <h1>All Hashtags</h1>
+    <section class = "HashtagList">
+        <ul>
+
+            <li th:each="tempHashtag : ${hashtags}"><a th:href="|/hashtags/${tempHashtag.id}|" th:text="${tempHashtag.hashtag}"></a></li>
+
+        </ul>
+    </section>
+
+</main>
+
+</body>
+</html>
