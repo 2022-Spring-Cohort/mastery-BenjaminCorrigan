@@ -28,9 +28,7 @@ public class Post {
         this.author = author;
     }
 
-    public Post(String post, Topic topic) {
 
-    }
 
 
     public Long getId() {

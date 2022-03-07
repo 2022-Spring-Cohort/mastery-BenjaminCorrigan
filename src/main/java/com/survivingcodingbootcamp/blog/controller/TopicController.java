@@ -17,9 +17,10 @@ public class TopicController {
     private PostRepository postRepo;
 
 
-    public TopicController(TopicRepository topicRepo) {
+    public TopicController(TopicRepository topicRepo,PostRepository postRepo) {
 
         this.topicRepo = topicRepo;
+        this.postRepo = postRepo;
     }
     @GetMapping("/{id}")
     public String displaySingleTopic(@PathVariable long id, Model model) {
@@ -28,12 +29,12 @@ public class TopicController {
     }
 
     @PostMapping("/{id}/addPost")
-    public String addPost(@PathVariable long id, @RequestParam String post){
+    public String addPost(@PathVariable long id, @RequestParam String title,@RequestParam String content,@RequestParam String author){
         Topic topic = topicRepo.findById(id).get();
-        Post post1 = new Post(post, topic);
+        Post post1 = new Post(title,topic,content,author);
         postRepo.save(post1);
 
 
-        return "redirect:/topic/" + id;
+        return "redirect:/topics/" + id;
     }
 }
