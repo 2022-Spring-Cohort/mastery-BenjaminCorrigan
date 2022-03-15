@@ -19,7 +19,7 @@
     </header>
     <main class="main-content">
         <section class="main-content__post post">
-            <ul>
+            <ul class="singleHashtag">
 
             <li th:each="currentPost: ${hashtag.posts}"><a th:href="'/posts/' + ${currentPost.id}" th:text="${currentPost.title}"></a></li>
             </ul>

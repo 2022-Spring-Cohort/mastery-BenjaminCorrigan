@@ -23,5 +23,12 @@
         min-width:1000px;
         margin: 15px auto;
     }
+    .hashtagList{
+        list-style-type: none;
+    }
+
+    .singleHashtag{
+        list-style-type: none;
+    }
 
 }

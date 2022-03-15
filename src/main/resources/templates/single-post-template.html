@@ -34,6 +34,13 @@
                 <input type="text" name="hashtag"/>
                 <input type="submit"/>
             </form>
+<!--            <li th:each="tempHashtag : ${hashtags}"><a th:href="|/hashtags/${tempHashtag.id}|" th:text="${post.content}"></a></li>-->
+            <h3>Hashtags</h3>
+            <ul class = "hashtagList">
+                <li th:each="hashtag: ${post.hashtags}">
+                    <a th:href="'/hashtags/'+${hashtag.id}" th:text="${hashtag.hashtag}"></a>
+                </li>
+            </ul>
 
         </main>
 
